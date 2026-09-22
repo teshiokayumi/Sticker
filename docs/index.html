@@ -444,11 +444,86 @@
       color: var(--primary-pink);
     }
 
+    /* フッター専用スタイル */
     .site-footer {
       text-align: center;
-      padding: 24px 0;
+      padding: 40px 0 30px;
+      margin-top: auto;
+      border-top: 2px dashed #fcd5df;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-card {
+      background: #ffffff;
+      border: 2px solid #ffe3ec;
+      border-radius: 20px;
+      padding: 24px 20px;
+      max-width: 640px;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 12px rgba(255, 118, 159, 0.08);
+    }
+
+    .footer-author {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .footer-author strong {
+      color: var(--primary-pink);
+      font-size: 1.2rem;
+    }
+
+    .footer-contact {
+      font-size: 0.9rem;
       color: var(--text-sub);
+      margin-bottom: 18px;
+    }
+
+    .footer-contact a {
+      color: #ff5e8e;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    .footer-links-title {
       font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-link-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      background: #fff0f5;
+      color: #ff5e8e;
+      border: 1.5px solid #ffd1df;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .footer-btn:hover {
+      background: var(--primary-pink);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(255, 118, 159, 0.25);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-sub);
       font-weight: 700;
     }
   </style>
@@ -527,9 +602,30 @@
     </div>
   </div>
 
+  <!-- フッター -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 My Portfolio. Powered by GitHub Pages.</p>
+      <div class="footer-card">
+        <p class="footer-author">制作：<strong>天汐香弓</strong></p>
+        
+        <p class="footer-contact">
+          お問合せはこちら（<a href="mailto:iasou24@gmail.com">iasou24@gmail.com</a>）まで
+        </p>
+
+        <div class="footer-links">
+          <p class="footer-links-title">【 Other Portfolios 】</p>
+          <div class="footer-link-buttons">
+            <a href="https://teshiokayumi.github.io/createportfolio/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+              🎬 素材以外の動画・小説はこちら
+            </a>
+            <a href="https://teshiokayumi.github.io/teshioportfolio/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+              💻 開発関連はこちら
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <p class="footer-copy">© 2026 天汐香弓. All Rights Reserved.</p>
     </div>
   </footer>
 
