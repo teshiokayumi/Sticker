@@ -1,166 +1,726 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>天汐香弓 Asset Gallery</title>
-<style>
-  :root {
-    --bg: #fdf6fb;
-    --card-bg: #ffffff;
-    --accent: #ff7ab8;
-    --accent2: #7aa8ff;
-    --text: #3a2e3f;
-    --muted: #8a7d8f;
-    --border: #f0dcee;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-  }
-  header {
-    padding: 40px 24px 20px;
-    text-align: center;
-  }
-  header h1 {
-    margin: 0 0 6px;
-    font-size: 1.8rem;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  header p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-  nav a {
-    padding: 6px 16px;
-    border-radius: 999px;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.85rem;
-  }
-  section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-  section h2 {
-    font-size: 1.2rem;
-    border-left: 5px solid var(--accent);
-    padding-left: 10px;
-  }
-  .count { color: var(--muted); font-weight: normal; font-size: 0.9rem; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 18px;
-    margin-top: 16px;
-  }
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 14px;
-    margin: 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-  }
-  .card img {
-    max-width: 100%;
-    max-height: 140px;
-    object-fit: contain;
-  }
-  .card figcaption {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .card .name {
-    font-size: 0.85rem;
-  }
-  .card .path {
-    font-size: 0.7rem;
-    color: var(--muted);
-    background: var(--bg);
-    border-radius: 6px;
-    padding: 2px 6px;
-    word-break: break-all;
-  }
-  .empty {
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--muted);
-    font-size: 0.75rem;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Asset & Sticker Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ポップで丸みのある可愛いフォント -->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-cream: #fff9f6;
+      --card-bg: #ffffff;
+      --primary-pink: #ff769f;
+      --accent-yellow: #ffd152;
+      --accent-blue: #6ecbf5;
+      --accent-purple: #9f7aea;
+      --text-main: #4a403b;
+      --text-sub: #8c827a;
+      --border-color: #f7e6e8;
+      --radius-round: 24px;
+      --shadow-cute: 0 10px 20px rgba(255, 118, 159, 0.12), 0 4px 6px rgba(0, 0, 0, 0.04);
+      --checker-pattern: repeating-conic-gradient(#f0eef5 0% 25%, #ffffff 0% 50%) 50% / 16px 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', 'Fredoka', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: radial-gradient(#ffd5e3 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ヘッダー */
+    .site-header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px dashed #fcd5df;
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      font-size: 2.2rem;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .logo-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #ff5e8e;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: 700;
+    }
+
+    /* 検索＆フィルター */
+    .controls-section {
+      padding: 30px 0 10px;
+    }
+
+    .controls-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 42px 12px 20px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid #ffd5e3;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 700;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.15);
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary-pink);
+      box-shadow: 0 0 0 4px rgba(255, 118, 159, 0.2);
+    }
+
+    .btn-clear {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-sub);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      background: #ffffff;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      color: var(--primary-pink);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-pink);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(255, 118, 159, 0.35);
+    }
+
+    /* ギャラリー一覧 */
+    .gallery-section {
+      flex: 1;
+      padding: 24px 0 60px;
+    }
+
+    .gallery-status {
+      text-align: right;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .asset-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-round);
+      border: 2px solid #fff0f3;
+      box-shadow: var(--shadow-cute);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+    }
+
+    .asset-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 16px 30px rgba(255, 118, 159, 0.2);
+      border-color: #ffd8e2;
+    }
+
+    .card-img-wrap {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: var(--checker-pattern);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* アイコン画像は丸枠プレビューで見やすく */
+    .asset-card[data-type="icon"] .card-img-wrap img {
+      border-radius: 18px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+    }
+
+    .asset-card:hover .card-img-wrap img {
+      transform: scale(1.08) rotate(1deg);
+    }
+
+    .card-info {
+      padding: 16px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #ffffff;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-badge {
+      font-size: 0.72rem;
+      background: #fff0f4;
+      color: #ff5e8e;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* モーダルポップアップ */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(74, 64, 59, 0.45);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-content {
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--radius-round);
+      width: 90%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      z-index: 1001;
+      padding: 32px;
+      border: 4px solid #fff0f5;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: #fbf2f5;
+      border: none;
+      color: var(--text-sub);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--primary-pink);
+      color: #fff;
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .modal-preview-box {
+      aspect-ratio: 1 / 1;
+      background: var(--checker-pattern);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 2px dashed #fbd4df;
+    }
+
+    .modal-preview-box.white-bg {
+      background: #ffffff;
+    }
+
+    .modal-preview-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 16px rgba(0,0,0,0.1));
+    }
+
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin: 8px 0;
+    }
+
+    .modal-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .modal-meta {
+      background: #fff8fa;
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border: 1px solid #ffe8ee;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .meta-label {
+      color: var(--text-sub);
+    }
+
+    .meta-value {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary-pink);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(255, 118, 159, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #f75d8a;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-sub);
+      border: 2px solid #ffd5e3;
+    }
+
+    .btn-secondary:hover {
+      background: #fff5f8;
+      color: var(--primary-pink);
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 24px 0;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Asset Gallery</h1>
-  <p>全 4 点 ／ stickers・icons フォルダに画像を追加すると自動で反映されます</p>
-  <nav>
-    <a href="#stickers">Stickers</a><a href="#icons">Icons</a>
-  </nav>
-</header>
 
-  <section id="stickers">
-    <h2>Stickers <span class="count">(3)</span></h2>
-    <div class="grid">
-    <figure class="card">
-      <img src="../stickers/go-for-it.png" alt="go for it" loading="lazy" />
-      <figcaption>
-        <span class="name">go for it</span>
-        <code class="path">stickers/go-for-it.png</code>
-      </figcaption>
-    </figure>
-    <figure class="card">
-      <img src="../stickers/keep-going.png" alt="keep going" loading="lazy" />
-      <figcaption>
-        <span class="name">keep going</span>
-        <code class="path">stickers/keep-going.png</code>
-      </figcaption>
-    </figure>
-    <figure class="card">
-      <img src="../stickers/you-got-this.png" alt="you got this" loading="lazy" />
-      <figcaption>
-        <span class="name">you got this</span>
-        <code class="path">stickers/you-got-this.png</code>
-      </figcaption>
-    </figure>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo-area">
+        <span class="logo-badge">🎨</span>
+        <div>
+          <h1 class="logo-title">My Collection</h1>
+          <p class="logo-subtitle">Sticker & Icon Portfolio</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 絞り込み & 検索バー -->
+  <section class="controls-section">
+    <div class="container controls-wrap">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="作品名やタグで探す...">
+        <button id="clearSearch" class="btn-clear" style="display: none;">&times;</button>
+      </div>
+
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-btn active" data-category="all">すべて</button>
+      </div>
     </div>
   </section>
-  <section id="icons">
-    <h2>Icons <span class="count">(1)</span></h2>
-    <div class="grid">
-    <figure class="card">
-      <img src="../icons/halloween-boy.png" alt="halloween boy" loading="lazy" />
-      <figcaption>
-        <span class="name">halloween boy</span>
-        <code class="path">icons/halloween-boy.png</code>
-      </figcaption>
-    </figure>
+
+  <!-- ギャラリー一覧 -->
+  <main class="gallery-section">
+    <div class="container">
+      <div class="gallery-status">
+        <span id="itemsCount">表示中: 0 件</span>
+      </div>
+
+      <div class="asset-grid" id="assetGrid"></div>
     </div>
-  </section>
-<footer>Auto-generated by scripts/build_gallery.py — do not edit this file by hand.</footer>
+  </main>
+
+  <!-- 拡大プレビュー用モーダル -->
+  <div class="modal" id="previewModal" aria-hidden="true">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body">
+        <div class="modal-preview-box" id="modalPreviewBox">
+          <img id="modalImg" src="" alt="プレビュー">
+        </div>
+        <div>
+          <div class="card-tags" id="modalTags" style="margin-bottom: 8px;"></div>
+          <h2 id="modalTitle" class="modal-title">作品タイトル</h2>
+          <p id="modalDesc" class="modal-desc">説明文がここに入ります。</p>
+
+          <div class="modal-meta">
+            <div class="meta-item">
+              <span class="meta-label">カテゴリ:</span>
+              <span class="meta-value" id="modalCategory">-</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">用途 / 形式:</span>
+              <span class="meta-value" id="modalFormat">PNG</span>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button id="modalToggleBg" class="btn-secondary">背景切替 (市松 / 白)</button>
+            <a id="modalDownload" href="" download class="btn-primary">画像をダウンロード</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 My Portfolio. Powered by GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    // -------------------------------------------------------------
+    // 【素材データ登録エリア】
+    // ここにご自身の画像ファイル名と説明を設定しています！
+    // -------------------------------------------------------------
+    const ASSETS_DATA = [
+      {
+        id: 1,
+        title: "YOU GOT THIS!",
+        category: "ステッカー",
+        type: "sticker",
+        tags: ["応援", "クラウン", "ポップ", "英語"],
+        image: "assets/you-got-this.png",
+        format: "PNG (ステッカー)",
+        description: "「あなたならできる！」元気が出るパステル調のぷっくりバルーン文字ステッカーです。"
+      },
+      {
+        id: 2,
+        title: "GO FOR IT!",
+        category: "ステッカー",
+        type: "sticker",
+        tags: ["虹", "星", "応援", "キラキラ"],
+        image: "assets/go-for-it.png",
+        format: "PNG (ステッカー)",
+        description: "にっこり笑顔のお星さまと虹がかわいい「思い切ってやってみよう！」ステッカーです。"
+      },
+      {
+        id: 3,
+        title: "KEEP GOING!",
+        category: "ステッカー",
+        type: "sticker",
+        tags: ["フラッグ", "ファイト", "カラフル"],
+        image: "assets/keep-going.png",
+        format: "PNG (ステッカー)",
+        description: "ピンクの応援フラッグがチャームポイントの「この調子で進もう！」メッセージステッカーです。"
+      },
+      {
+        id: 4,
+        title: "Halloween Night",
+        category: "アイコン",
+        type: "icon",
+        tags: ["ハロウィン", "紫の薔薇", "少年", "アイコン"],
+        image: "assets/halloween-boy.png", 
+        format: "PNG (正方形アイコン)",
+        description: "紫の薔薇とジャック・オー・ランタンに彩られた、ハロウィン仕様の美麗キャラクターアイコンです。"
+      }
+    ];
+
+    let currentCategory = "all";
+    let currentSearchQuery = "";
+    let isWhiteBg = false;
+
+    const grid = document.getElementById("assetGrid");
+    const itemsCountEl = document.getElementById("itemsCount");
+    const categoryFiltersContainer = document.getElementById("categoryFilters");
+    const searchInput = document.getElementById("searchInput");
+    const clearSearchBtn = document.getElementById("clearSearch");
+
+    const modal = document.getElementById("previewModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalTags = document.getElementById("modalTags");
+    const modalFormat = document.getElementById("modalFormat");
+    const modalCategory = document.getElementById("modalCategory");
+    const modalDownload = document.getElementById("modalDownload");
+    const modalPreviewBox = document.getElementById("modalPreviewBox");
+    const modalToggleBg = document.getElementById("modalToggleBg");
+
+    function init() {
+      renderCategoryButtons();
+      renderGrid();
+      setupEvents();
+    }
+
+    function renderCategoryButtons() {
+      const categories = ["all", ...new Set(ASSETS_DATA.map(item => item.category))];
+      categoryFiltersContainer.innerHTML = categories.map(cat => `
+        <button class="filter-btn ${cat === currentCategory ? 'active' : ''}" data-category="${cat}">
+          ${cat === 'all' ? 'すべて' : cat}
+        </button>
+      `).join("");
+    }
+
+    function getFilteredData() {
+      return ASSETS_DATA.filter(item => {
+        const matchCategory = (currentCategory === "all" || item.category === currentCategory);
+        const q = currentSearchQuery.toLowerCase().trim();
+        const matchSearch = !q || (
+          item.title.toLowerCase().includes(q) ||
+          item.tags.some(tag => tag.toLowerCase().includes(q)) ||
+          item.category.toLowerCase().includes(q)
+        );
+        return matchCategory && matchSearch;
+      });
+    }
+
+    function renderGrid() {
+      const filtered = getFilteredData();
+      itemsCountEl.textContent = `表示中: ${filtered.length} 件`;
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="asset-card" data-id="${item.id}" data-type="${item.type}">
+          <div class="card-img-wrap">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+          </div>
+          <div class="card-info">
+            <div class="card-title">${item.title}</div>
+            <div class="card-tags">
+              ${item.tags.slice(0, 3).map(t => `<span class="tag-badge">#${t}</span>`).join("")}
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function openModal(id) {
+      const item = ASSETS_DATA.find(i => i.id === id);
+      if (!item) return;
+
+      modalImg.src = item.image;
+      modalTitle.textContent = item.title;
+      modalDesc.textContent = item.description || "";
+      modalFormat.textContent = item.format;
+      modalCategory.textContent = item.category;
+      modalDownload.href = item.image;
+      modalDownload.setAttribute("download", `${item.title}.png`);
+      modalTags.innerHTML = item.tags.map(t => `<span class="tag-badge">#${t}</span>`).join("");
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function setupEvents() {
+      categoryFiltersContainer.addEventListener("click", e => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = btn.dataset.category;
+        renderGrid();
+      });
+
+      searchInput.addEventListener("input", e => {
+        currentSearchQuery = e.target.value;
+        clearSearchBtn.style.display = currentSearchQuery ? "block" : "none";
+        renderGrid();
+      });
+
+      clearSearchBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        currentSearchQuery = "";
+        clearSearchBtn.style.display = "none";
+        renderGrid();
+      });
+
+      grid.addEventListener("click", e => {
+        const card = e.target.closest(".asset-card");
+        if (!card) return;
+        openModal(Number(card.dataset.id));
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", closeModal);
+      window.addEventListener("keydown", e => {
+        if (e.key === "Escape" && modal.classList.contains("open")) {
+          closeModal();
+        }
+      });
+
+      modalToggleBg.addEventListener("click", () => {
+        isWhiteBg = !isWhiteBg;
+        if (isWhiteBg) {
+          modalPreviewBox.classList.add("white-bg");
+        } else {
+          modalPreviewBox.classList.remove("white-bg");
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
 </body>
 </html>
